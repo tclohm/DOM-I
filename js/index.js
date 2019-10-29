@@ -40,3 +40,89 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+// navigation
+let nav = document.querySelectorAll("nav a");
+const navValues = Object.values(siteContent["nav"]); 
+Array.from(nav).forEach((element, index) => {
+  element.textContent = navValues[index];
+});
+
+// call to action
+let ctah1 = document.querySelector(".cta-text h1");
+ctah1.textContent = siteContent["cta"].h1;
+
+let ctabutton = document.querySelector(".cta-text button");
+ctabutton.textContent = siteContent["cta"].button;
+
+let ctaimage = document.querySelector("#cta-img");
+ctaimage.setAttribute('src', siteContent["cta"]["img-src"]);
+
+// top content
+let topContentFeatureH4 = document.querySelector(".top-content .text-content h4");
+topContentFeatureH4.textContent = siteContent["main-content"]["features-h4"];
+
+let topContentFeatureParagraph = document.querySelector(".top-content .text-content p");
+topContentFeatureParagraph.textContent = siteContent["main-content"]["features-content"];
+
+
+let topContentAboutH4 = document.querySelector(".top-content .text-content:last-child h4");
+topContentAboutH4.textContent = siteContent["main-content"]["about-h4"];
+
+let topContentAboutParagraph = document.querySelector(".top-content .text-content:last-child p");
+topContentAboutParagraph.textContent = siteContent["main-content"]["about-content"];
+
+// image
+let middleImage = document.getElementById("middle-img");
+middleImage.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+middleImage.alt = "code"
+
+// bottom content
+let bottomContentServicesH4 = document.querySelector(".bottom-content .text-content h4");
+bottomContentServicesH4.textContent = siteContent["main-content"]["services-h4"];
+
+let bottomContentServicesParagraph = document.querySelector(".bottom-content .text-content p");
+bottomContentServicesParagraph.textContent = siteContent["main-content"]["services-content"];
+
+let bottomContentProductH4 = document.querySelector(".bottom-content .text-content:nth-child(2) h4");
+bottomContentProductH4.textContent = siteContent["main-content"]["product-h4"];
+
+let bottomContentProductParagraph = document.querySelector(".bottom-content .text-content:nth-child(2) p");
+bottomContentProductParagraph.textContent = siteContent["main-content"]["product-content"];
+
+let bottomContentVisionH4 = document.querySelector(".bottom-content .text-content:nth-child(3) h4");
+bottomContentVisionH4.textContent = siteContent["main-content"]["vision-h4"];
+
+let bottomContentVisionParagraph = document.querySelector(".bottom-content .text-content:nth-child(3) p");
+bottomContentVisionParagraph.textContent = siteContent["main-content"]["vision-content"];
+
+
+let contactH4 = document.querySelector(".contact h4");
+contactH4.textContent = siteContent["contact"]["contact-h4"];
+
+let contactParagraphs = document.querySelectorAll(".contact p");
+const contactValues = Object.values(siteContent["contact"]);
+const contactValuesWOFirst = contactValues.splice(1, contactValues.length)
+
+Array.from(contactParagraphs).forEach((element, index) => {
+  element.textContent = contactValuesWOFirst[index];
+});
+
+let footer = document.querySelector("footer p");
+footer.textContent = siteContent.footer.copyright;
+
+
+Array.from(nav).forEach((element) => {
+  element.style.color = "green";
+});
+
+const sourcecode = document.createElement("a");
+sourcecode.style.color = "purple";
+sourcecode.textContent = "Github";
+
+let navi = document.querySelector("nav");
+navi.append(sourcecode);
+
+const magic = document.createElement("a");
+magic.textContent = "Magic";
+magic.style.color = "orange";
+navi.prepend(magic);
