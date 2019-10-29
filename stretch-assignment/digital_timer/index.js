@@ -31,7 +31,17 @@ function colorRed() {
 	
 }
 
+function reset(element) {
+	let digit = document.querySelector(`#${element}`);
+	digit.innerHTML = "-";
+}
+
 function startTimer() {
+	reset("msTens");
+	reset("msHundreds");
+	reset("secondOnes");
+	reset("secondTens")
+
 	const ms10 = increment("msTens", 10);
 	const ms100 = increment("msHundreds", 100);
 	const s1 = increment("secondOnes", 1000);
